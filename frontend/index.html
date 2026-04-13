@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atish Khade - DevOps Engineer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./assets/images/man.webp" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container nav-container">
+      <div class="brand">
+        <a href="#hero">Atish <span>Khade</span></a>
+      </div>
+      <nav>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content container">
+      <h1>Hello, I'm <span>Atish Khade</span></h1>
+      <p>DevOps Engineer | Linux Administrator | Automating & Streamlining CI/CD Pipelines | Cloud & Infrastructure Expert</p>
+      <a href="#projects" class="cta">View Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="./assets/images/cicd.png" alt="DevOps">
+          <h3>CI/CD Pipelines</h3>
+          <p>Design and maintain automated build and deployment pipelines using Jenkins, Git, and Terraform.</p>
+        </div>
+        <div class="service-card">
+          <img src="./assets/images/cloud.webp" alt="AWS">
+          <h3>Cloud & Infrastructure</h3>
+          <p>Manage scalable AWS environments, using Infrastructure as Code for reliable and secure deployments.</p>
+        </div>
+        <div class="service-card">
+          <img src="./assets/images/docker.png" alt="Docker">
+          <h3>Containerization</h3>
+          <p>Containerize applications with Docker and orchestrate with Kubernetes for efficiency and scalability.</p>
+        </div>
+        <div class="service-card">
+          <img src="./assets/images/opt.png" alt="Optimization">
+          <h3>Optimization</h3>
+          <p>Performance tuning, monitoring, and automation to improve deployment speed and system reliability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="./assets/images/quiz-app.avif" alt="Interactive Quiz App">
+          <div class="project-info">
+            <h3>CI/CD Pipeline with Kubernetes</h3>
+            <p>Built an end-to-end CI/CD pipeline using Jenkins to automate build, test, and deployment of containerized applications on Kubernetes (EKS), enabling faster and reliable releases.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="./assets/images/e-commerc-website" alt="E-Commerce Website">
+          <div class="project-info">
+            <h3>Terraform AWS Infrastructure</h3>
+            <p>Designed and provisioned scalable AWS infrastructure using Terraform, including VPC, EC2, and RDS, with modular and reusable Infrastructure as Code practices.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="./assets/images/Portfolio-Website.webp" alt="Portfolio Website">
+          <div class="project-info">
+            <h3>Microservices with Docker & Kubernetes</h3>
+            <p>Beautifully designed portfolio website using microservices deployment with Docker.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container about-container">
+      <div class="about-img">
+        <img src="./assets/images/man.webp" alt="Atish Khade">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>DevOps Engineer experienced in Git, Docker, Jenkins, Terraform, Linux, and AWS. Focused on building scalable CI/CD pipelines, automating deployments, and managing cloud infrastructure with high availability and security.</p>
+        <a href="./assets/my-cv.pdf" download class="cta">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ UPDATED Contact Section (Microservice Enabled) -->
+  <section id="contact">
+    <div class="container contact-container">
+      <h2 class="section-title">Contact</h2>
+
+      <form id="contactForm" class="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="cta">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2026 Atish Khade. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
