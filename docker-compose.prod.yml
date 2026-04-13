@@ -1,0 +1,26 @@
+services:
+  frontend:
+    image: atishkhade05/frontend:latest
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+
+  contact-service:
+    image: atishkhade05/contact-service:latest
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:6
+    restart: unless-stopped
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
