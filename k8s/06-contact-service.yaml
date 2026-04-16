@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: contact-service
+spec:
+  selector:
+    matchLabels:
+      app: contact-service
+  template:
+    metadata:
+      labels:
+        app: contact-service
+    spec:
+      containers:
+      - name: contact-service
+        image: atishkhade05/contact-service:latest
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: contact-service
+spec:
+  selector:
+    app: contact-service
+  ports:
+    - port: 5000
+      targetPort: 5000

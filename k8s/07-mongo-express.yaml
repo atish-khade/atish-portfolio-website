@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-express
+spec:
+  selector:
+    matchLabels:
+      app: mongo-express
+  template:
+    metadata:
+      labels:
+        app: mongo-express
+    spec:
+      containers:
+      - name: mongo-express
+        image: mongo-express:latest
+        ports:
+        - containerPort: 8081
+        env:
+        # Connects to your "mongodb" Service
+        - name: ME_CONFIG_MONGODB_SERVER
+          value: "mongodb"
+        - name: ME_CONFIG_MONGODB_PORT
+          value: "27017"
+        # Since your code uses 'contactDB', we tell Express to look there
+        - name: ME_CONFIG_MONGODB_ENABLE_ADMIN
+          value: "true"
+
+        # Pulling UI credentials from the Secret
+        - name: ME_CONFIG_BASICAUTH_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-express-auth
+              key: username
+        - name: ME_CONFIG_BASICAUTH_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-express-auth
+              key: password
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-express-service
+spec:
+  type: NodePort
+  selector:
+    app: mongo-express
+  ports:
+    - port: 8081
+      targetPort: 8081
+      nodePort: 30008

@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: main-ingress
+  annotations:
+    # KEEP THIS: It tells Cert-Manager which issuer to use
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    # KEEP THIS: Your path rewriting logic
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  # USE THIS: This is the modern way to define the class
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - kube.opslab.site
+    - mongo.opslab.site
+    secretName: kube-opslab-tls
+  rules:
+  - host: kube.opslab.site
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 80
+  - host: mongo.opslab.site
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mongo-express-service # Ensure this matches your service name
+            port:
+              number: 8081
