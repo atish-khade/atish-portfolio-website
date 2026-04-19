@@ -48,14 +48,3 @@ The Jenkinsfile is configured with the following stages:
     * Updates the Kubernetes manifests.
     * Performs a `rollout restart` on the deployments to ensure zero-downtime updates and fresh image pulls.
 
----
-
-## 🔧 Installation & Setup
-
-### 1. Kubernetes Cluster Setup
-The cluster was initialized using `kubeadm`.
-```bash
-# On Master Node
-kubeadm init --pod-network-cidr=192.168.0.0/16
-# Install Calico Network Plugin
-kubectl apply -f [https://docs.projectcalico.org/manifests/calico.yaml](https://docs.projectcalico.org/manifests/calico.yaml)
