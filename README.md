@@ -32,7 +32,7 @@ The infrastructure is designed for high availability and environment parity:
 3.  **Production Cluster:** A 3-node Kubernetes cluster managed via `kubeadm`.
     * **Control Plane:** Manages cluster state and API.
     * **Worker Nodes:** Host the application workloads.
-<img src="frontend/assets/images/jenkins-cicd-k8s.webp" alt="Logo" width="200">
+<img src="frontend/assets/images/jenkins-cicd-k8s.webp" alt="Logo" width="800">
 ---
 
 ## 🚀 CI/CD Pipeline Workflow
