@@ -32,7 +32,7 @@ The infrastructure is designed for high availability and environment parity:
 3.  **Production Cluster:** A 3-node Kubernetes cluster managed via `kubeadm`.
     * **Control Plane:** Manages cluster state and API.
     * **Worker Nodes:** Host the application workloads.
-<img src="frontend/assets/images/jenkins-cicd-k8s.webp" alt="Logo" width="800">
+<img src="frontend/assets/images/jenkins-cicd-k8s.webp" alt="Logo" width="700">
 ---
 
 ## 🚀 CI/CD Pipeline Workflow
@@ -48,3 +48,4 @@ The Jenkinsfile is configured with the following stages:
     * Updates the Kubernetes manifests.
     * Performs a `rollout restart` on the deployments to ensure zero-downtime updates and fresh image pulls.
 
+<img src="frontend/assets/images/microservices-arch.webp" alt="Logo" width="700">
